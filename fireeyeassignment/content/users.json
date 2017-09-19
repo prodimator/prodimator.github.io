@@ -10,7 +10,7 @@
                 "Date":"Sep 15"
             },
             {
-                "Text":"Composed tweets will only be saved until the page until a new session is made. Composed tweets are stored in local storage..",
+                "Text":"Composed tweets will only be saved until the page until a new session is made. Composed tweets are stored in local storage. Any changes will be reset on page refresh.",
                 "Date":"Sep 11"
             }
         ]

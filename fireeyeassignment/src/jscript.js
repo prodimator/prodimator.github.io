@@ -1,28 +1,10 @@
+var userList =[]; //global variable
+var activeUser="";
 function init(){
-    
-    var page = 1;
-    var numResults = 100;
-    var cont = true;
-    /*while (page < 3){
-        $.getJSON("https://api.github.com/users/oracle/repos?per_page="+numResults+"&page="+page, function(repos){
-                $.each(repos, function(i, data){
-                    console.log(repos.length+" "+ numResults+" "+data.name);
-                });
-                if (repos.length < numResults){
-                    console.log("GOT HERE\n\n\n");
-                    cont = false; 
-                }
-        });
-        page++;
-        //break;
-    }*/
-    
-    
-    
-    var activeUser = "Obama" //set by default
+    activeUser = "Obama" //set by default
     loadJSONFeed();
     
-    $(".user").on("click", function(e) {
+    $("body").on("click",".user", function(e) {
         $(".active").addClass("inactive");
         $(".active").removeClass("active");
         $(this).addClass("active");
@@ -34,11 +16,22 @@ function init(){
     
     $(".tweetbox").on("keyup", function(e){
         if(e.which == 13){
+            e.preventDefault();
             addTweet(activeUser, $(this).val());
             $(this).val('');
         }
     });
-
+	
+    $(".addUser").on("click", function(e) {
+		$(".addUserBox").css("display", "inline");
+	});
+	$(".addUserBox").on("keydown", function(e){
+        if(e.which == 13){
+            createUser($(this).val());
+			$(this).css("display","none");
+            $(this).val('');
+        }
+    });
 }
 
 function addTweet(activeUser, tweet){
@@ -52,41 +45,51 @@ function addTweet(activeUser, tweet){
 }
 
 function loadJSONFeed(){
+    
     //this loads an artifical tweet history from json file and puts it into localstorage
     var text = [];
-    /*var index;
-    if (activeUser == "Obama"){
-        index = 0;
-    }
-    if (activeUser == "Trump"){
-        index = 1;
-    }*/
-    $.ajax({
-        type: 'GET',
-        url: "content/users.json",
-        dataType: 'json',
-        success: function(data) { text = data;},
-        async: false
+	$.getJSON("content/users.json", function(repos){
+		text=repos;
+        for (i = 0; i < text.Users.length; i++){
+            userList.push(text.Users[i].Name);
+            localStorage.setItem(userList[i], JSON.stringify(text.Users[i]));
+        }
     });
-	
-    
-    localStorage.setItem("Obama", JSON.stringify(text.Users[0])); //Obama
-    localStorage.setItem("Trump", JSON.stringify(text.Users[1])); //Trump
+   
+    /*
+    since AJAX is asynchronous, wait to update the feed until it has the correct data
+    */
+    setTimeout(function(){
+        var user = JSON.parse(localStorage.getItem(userList[0])); //load Obama by default
+        refreshFeed(user);
+    }, 100);
+}
 
-    var user = JSON.parse(localStorage.getItem("Obama")); //load Obama by default
-    refreshFeed(user);
+function createUser(user){
+    userList.push(user);
+    localStorage.setItem(user,'{"Name":"'+user+'","Tweets":[]}');
+    
+    $('<a class="nav-item user inactive" href="#">'+user+'</a>').insertBefore( ".addUser" );
+    
+    //var newuser = JSON.parse(localStorage.getItem(user));
+    // refreshFeed(newuser);
+    // activeUser = user;
 }
 
 function refreshFeed(user){
-    $('.activity-feed').empty();
-    
-    for (i=user.Tweets.length-1; i >= 0; i--){
-        var element = '<div class="feed-item">'+
-            '<div class="name">'+user.Name+'</div>'+
-            '<div class="date">'+user.Tweets[i].Date+'</div>'+
-            '<div class="text">'+user.Tweets[i].Text+'</div></div>'
-        $(".activity-feed").append(element);
+    /*clear feed and update it*/
+    $(".activity-feed").empty();
+    if (user.Tweets.length != 0){
+        for (i=user.Tweets.length-1; i >= 0; i--){
+            var element = '<div class="feed-item">'+
+                '<div class="name">'+user.Name+'</div>'+
+                '<div class="date">'+user.Tweets[i].Date+'</div>'+
+                '<div class="text">'+user.Tweets[i].Text+'</div></div>'
+            $(".activity-feed").append(element);
+        }
+    /*update tweetnumval*/
     }
+    $(".tweetsNumVal").html(user.Tweets.length);
 }
 
 function getDateFormat(){
@@ -108,3 +111,4 @@ function getDateFormat(){
     return (mm+' '+dd);
 }
 
+document.addEventListener('DOMContentLoaded', init);
