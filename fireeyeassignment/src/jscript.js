@@ -1,7 +1,7 @@
 var userList =[]; //global variable
 var activeUser="";
 function init(){
-    activeUser = "Obama" //set by default
+    activeUser = "NASA" //set by default
     loadJSONFeed();
     
     $("body").on("click",".user", function(e) {
@@ -60,7 +60,7 @@ function loadJSONFeed(){
     since AJAX is asynchronous, wait to update the feed until it has the correct data
     */
     setTimeout(function(){
-        var user = JSON.parse(localStorage.getItem(userList[0])); //load Obama by default
+        var user = JSON.parse(localStorage.getItem(userList[0])); //load NASA by default
         refreshFeed(user);
     }, 100);
 }
