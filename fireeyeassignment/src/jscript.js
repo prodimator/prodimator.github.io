@@ -62,7 +62,7 @@ function loadJSONFeed(){
     setTimeout(function(){
         var user = JSON.parse(localStorage.getItem(userList[0])); //load NASA by default
         refreshFeed(user);
-    }, 300);
+    }, 500);
 }
 
 function createUser(user){
