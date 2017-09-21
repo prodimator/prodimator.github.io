@@ -103,7 +103,7 @@ textarea{
     border-radius: 10px;
     border: 1px solid #DEDEDE;
     background-color: white;
-    overflow-y:scroll;
+    overflow-y:auto;
 }
 .activity-feed .feed-item {
     padding-top:10px;
