@@ -66,3 +66,37 @@ a:hover {
     color: #5622A5;
     text-decoration: none
 }
+
+/* The alert message box */
+.update-container {
+    margin-top:15px;
+    height: 200px;
+    position: absolute;
+    background-color: white;
+    color: #555555;
+    z-index: 2;
+    border-bottom: 2px #2E2E2E;
+    border-radius: 4px;
+}
+  
+  /* The close button */
+.closebtn {
+    margin-top: 15px;
+    margin-left: 15px;
+    color: #555555;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.9s;
+}
+  
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
+}
+
+.updates{
+    font-size: 24px;
+}
