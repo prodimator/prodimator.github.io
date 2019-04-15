@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "NexaBold";
+  src: url("./styles/fonts/NexaBold.otf")
+}
+@font-face {
+  font-family: "NexaLight";
+  src: url("./styles/fonts/NexaLight.otf")
+}
+@font-face {
+  font-family: 'Open Sans', sans-serif;
+  src: 'https://fonts.googleapis.com/css?family=Open+Sans';
+}
+
+$NexaBold: "NexaBold";
+$NexaLight: "NexaLight";
+$OpenSans: "Open Sans";
