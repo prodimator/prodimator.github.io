@@ -1,0 +1,19 @@
+@import '../../styles/colors/colors.scss';
+
+
+.footer{
+    display: flex;
+    align-items: center;
+    background: linear-gradient(-60deg, $dark-purple 0%, $light-purple 100%);
+    color: $white;
+    height: 200px;
+    padding: 0 50px;
+
+    p{
+        margin: 5px 0;
+    }
+
+    a{
+        color: $white;
+    }
+}

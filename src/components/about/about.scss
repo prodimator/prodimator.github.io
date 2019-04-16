@@ -1,0 +1,41 @@
+@import '../../styles/colors/colors.scss';
+
+.about{
+    background: $white;
+    display: flex;
+    text-align: left;
+    transform: translateY(-50%);
+    width: 60%;
+    z-index: 10;
+
+    .left{
+        padding: 20px;
+        width: 66%;
+
+        .about-me{
+            font-size: 1.5rem;
+        }
+    }
+    .right{
+        background: linear-gradient(-60deg, $dark-purple 0%, $light-purple 100%);
+        padding: 20px;
+        width: 33%;
+
+        .about-featured{
+            color: $black;
+            font-size: .8rem;
+        }
+        .about-featured-title{
+            color: $white;
+            font-size: 1.5rem;
+        }
+        .button{
+            border: $white 2px solid;
+            border-radius: 10px;
+            color: $white;
+            font-size: .8rem;
+            padding: 10px 0;
+            text-align: center;
+        }
+    }
+}

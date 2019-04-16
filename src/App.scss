@@ -1,0 +1,30 @@
+.App {
+  text-align: left;
+
+  .about-container{
+    display: flex;
+    justify-content: center;
+  }
+  .content{
+    padding: 0 100px;
+
+    .my-work{
+      padding: 0 30px;
+      text-align: left;
+    }
+
+    .categories-container{
+      display: flex;
+      justify-content: space-between;
+
+      .col{
+        padding: 0 30px;
+        width: 33%;
+      }
+    }
+    .coming-soon{
+      padding: 30px;
+      font-size: 1.5rem;
+    }
+  }
+}

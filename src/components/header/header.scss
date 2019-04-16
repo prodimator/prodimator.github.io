@@ -1,0 +1,16 @@
+@import '../../styles/colors/colors.scss';
+
+.header{
+    background: url('../../images/header-image.jpg');
+    background-size: cover;
+    background-position: 0 -100px; 
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p{
+        font-size: 3rem;
+        color: $white;
+    }
+}
