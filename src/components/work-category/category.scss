@@ -1,0 +1,13 @@
+@import '../../styles/colors/colors.scss';
+
+.category{
+    padding: 20px;
+    text-align: left;
+
+    .icon{
+        width: 100px;
+    }
+}
+.outline{
+    outline: $light-purple 3px solid;
+}
