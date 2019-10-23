@@ -82,6 +82,7 @@ class Modal extends Component {
                                 type="text"
                                 id="w"
                                 value={this.state.w}
+                                disabled={window.innerWidth <= 812 ? true : false}
                                 onChange={this.handleChange}
                             />
                         </div>
