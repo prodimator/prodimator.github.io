@@ -1,0 +1,36 @@
+.modal{
+    background: rgba(15,19,36, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .modal-container{
+        position: relative;
+        background: white;
+        height: fit-content;
+        padding: 50px;
+        border-radius: 20px;
+
+        form{
+
+            .input-field{
+                display: flex;
+                align-items: center;
+
+                span{
+                    width: 20px;
+                }
+                input, select{
+                    margin: 10px;
+                } 
+            }
+        }
+
+    }
+}
