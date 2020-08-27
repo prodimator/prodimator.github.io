@@ -1,0 +1,24 @@
+@import '../../globals/styles.scss';
+
+.initial-loading-container{
+    height: 100vh;
+    width: 100vw;
+
+    .loading-image{
+        width: 150px;
+        height: 150px;
+        border-radius: 100px;
+    }
+
+    .loading-svg {
+        fill: none;
+        overflow: visible;
+        stroke: #AD95FF;
+        stroke-width: 7;
+        stroke-linecap: round;
+
+        path{
+            transform-origin: 0 !important;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+@import '../../globals/styles.scss';
+
+.button-container{
+
+    button{
+        width: 150px;
+        padding: 12px 24px;
+        border-radius: 10px;
+        text-transform: uppercase;
+        outline: none;
+        cursor: pointer;
+    }
+    button.primary{
+        background: $secondary-color;
+        border: none;
+    }
+    button.secondary{
+        background: none;
+        border: 2px solid $secondary-color;
+        color: $secondary-color;
+    }
+}

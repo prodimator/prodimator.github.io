@@ -1,0 +1,18 @@
+@import '../../globals/styles.scss';
+
+
+.vertical-icons-container{
+    height: 100%;
+
+    span{
+        color: $secondary-color;
+        font-size: $lg;
+        margin: $lg 0;
+    }
+
+    .vertical-divider-long{
+        border-left: 2px solid $secondary-color;
+        height: 200px;
+        margin: auto;
+    }
+}

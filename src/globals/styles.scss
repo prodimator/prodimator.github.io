@@ -1,0 +1,257 @@
+$primary-color: #0A192F;
+$secondary-color: #AD95FF;
+$primary-white: #F3F3F3;
+$black: #222222;
+$font-sizes: (
+    xsm: 10px,
+    sm: 12px,
+    md: 16px,
+    lg: 24px,
+    xxlg: 64px,
+);
+
+$font-weights: (
+    light: 200,
+    normal: 400,
+    bold: 700,
+);
+
+h1{
+    font-size: 64px;
+    font-weight: 700;
+}
+h3{
+    font-size: 24px;
+    font-weight: normal;
+    opacity: .9;
+}
+h4{
+    font-size: 16px;
+    font-weight: normal;
+    opacity: .9;
+}
+
+$xsm: 4px;
+$sm: 8px;
+$md: 16px;
+$md-lg: 20px;
+$lg: 24px;
+$xlg: 32px;
+
+$spaces: (
+    xsm: 4px,
+    sm: 8px,
+    md: 16px,
+    md-lg: 20px,
+    lg: 24px,
+    xlg: 32px,
+);
+
+$widths: (
+    full-width: 100%,
+    half-width: 50%,
+);
+
+$desktop: 1600px;
+$tablet: 1024px;
+$mobile: 400px;
+
+$breakpoints: (
+    desktop: 1600px,
+    tablet: 1024px,
+    mobile: 400px, 
+);
+
+//font sizes
+@mixin font-size($prefix: '-'){
+    @each $size, $value in $font-sizes {
+        &#{$prefix}#{$size} {
+            font-size: $value;
+        }
+    }
+}
+
+.font-size {
+    @include font-size($prefix: '--');
+}
+
+//font weights
+@mixin font-weight($prefix: '-'){
+    @each $size, $value in $font-weights {
+        &#{$prefix}#{$size} {
+            font-weight: $value;
+        }
+    }
+}
+
+.font-weight {
+    @include font-weight($prefix: '--');
+}
+
+//margins
+@mixin margin($prefix: '-'){
+    @each $size, $value in $spaces {
+        &#{$prefix}#{$size} {
+            margin: $value;
+        }
+    }
+}
+.margin {
+    @include margin($prefix: '--');
+}
+
+@mixin margin-y($prefix: '-'){
+    @each $size, $value in $spaces {
+        &#{$prefix}#{$size} {
+            margin: $value 0;
+        }
+    }
+}
+.margin-y {
+    @include margin-y($prefix: '--');
+}
+
+@mixin margin-x($prefix: '-'){
+    @each $size, $value in $spaces {
+        &#{$prefix}#{$size} {
+            margin: 0 $value;
+        }
+    }
+}
+.margin-x {
+    @include margin-x($prefix: '--');
+}
+
+@mixin margin-top($prefix: '-'){
+    @each $size, $value in $spaces {
+        &#{$prefix}#{$size} {
+            margin: $value 0 0 0;
+        }
+    }
+}
+.margin-top {
+    @include margin-top($prefix: '--');
+}
+
+@mixin margin-right($prefix: '-'){
+    @each $size, $value in $spaces {
+        &#{$prefix}#{$size} {
+            margin: 0 $value 0 0;
+        }
+    }
+}
+.margin-right {
+    @include margin-right($prefix: '--');
+}
+
+@mixin margin-bottom($prefix: '-'){
+    @each $size, $value in $spaces {
+        &#{$prefix}#{$size} {
+            margin: 0 0 $value 0;
+        }
+    }
+}
+.margin-bottom {
+    @include margin-bottom($prefix: '--');
+}
+
+@mixin margin-left($prefix: '-'){
+    @each $size, $value in $spaces {
+        &#{$prefix}#{$size} {
+            margin: 0 0 0 $value;
+        }
+    }
+}
+.margin-left {
+    @include margin-left($prefix: '--');
+}
+
+//paddings
+@mixin padding($prefix: '-'){
+    @each $size, $value in $spaces {
+        &#{$prefix}#{$size} {
+            padding: $value;
+        }
+    }
+}
+.padding {
+    @include padding($prefix: '--');
+}
+
+@mixin padding-y($prefix: '-'){
+    @each $size, $value in $spaces {
+        &#{$prefix}#{$size} {
+            padding: $value 0;
+        }
+    }
+}
+.padding-y {
+    @include padding-y($prefix: '--');
+}
+
+@mixin padding-x($prefix: '-'){
+    @each $size, $value in $spaces {
+        &#{$prefix}#{$size} {
+            padding: 0 $value;
+        }
+    }
+}
+.padding-x {
+    @include padding-x($prefix: '--');
+}
+
+@mixin padding-top($prefix: '-'){
+    @each $size, $value in $spaces {
+        &#{$prefix}#{$size} {
+            padding: $value 0 0 0;
+        }
+    }
+}
+.padding-top {
+    @include padding-top($prefix: '--');
+}
+
+@mixin padding-right($prefix: '-'){
+    @each $size, $value in $spaces {
+        &#{$prefix}#{$size} {
+            padding: 0 $value 0 0;
+        }
+    }
+}
+.padding-right {
+    @include padding-right($prefix: '--');
+}
+
+@mixin padding-bottom($prefix: '-'){
+    @each $size, $value in $spaces {
+        &#{$prefix}#{$size} {
+            padding: 0 0 $value 0;
+        }
+    }
+}
+.padding-bottom {
+    @include padding-bottom($prefix: '--');
+}
+
+@mixin padding-left($prefix: '-'){
+    @each $size, $value in $spaces {
+        &#{$prefix}#{$size} {
+            padding: 0 0 0 $value;
+        }
+    }
+}
+.padding-left {
+    @include padding-left($prefix: '--');
+}
+
+//widths
+@mixin widths($prefix: '-'){
+    @each $size, $value in $widths {
+        &#{$prefix}#{$size} {
+            width: $value;
+        }
+    }
+}
+.width{
+    @include widths($prefix: '--');
+}
