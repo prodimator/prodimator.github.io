@@ -1,0 +1,15 @@
+@import '../../globals/styles.scss';
+
+.home-container {
+  
+    .home-content{
+        
+        .name-svg {
+            fill: none;
+            overflow: visible;
+            stroke: $primary-white;
+            stroke-width: 2;
+            stroke-linecap: round;
+        }
+    }
+}

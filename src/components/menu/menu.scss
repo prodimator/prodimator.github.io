@@ -1,0 +1,15 @@
+@import '../../globals/styles.scss';
+
+.menu-container {
+  position: absolute;
+  
+  .menu-link{
+      text-transform: uppercase;
+      cursor: pointer;
+  }
+  .menu-link.active{
+      color: $secondary-color;
+      box-sizing: border-box;
+      border-bottom: 2px solid $secondary-color;
+  }
+}
