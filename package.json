@@ -15,7 +15,7 @@
     "craco-less": "^1.17.0",
     "flexbox-react": "^4.4.0",
     "framer-motion": "^2.6.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "react": "^16.13.1",
     "react-anime": "^3.0.3",
     "react-dom": "^16.13.1",
